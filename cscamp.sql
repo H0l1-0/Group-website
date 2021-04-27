@@ -50,22 +50,6 @@ CREATE TABLE tasks (
     FOREIGN KEY (job_id)   REFERENCES jobs(job_id)
 );
 
-CREATE TABLE donor_info (
-    donor_id    INT             NOT NULL,
-    first_name  VARCHAR(14)     NOT NULL,
-    last_name   VARCHAR(16)     NOT NULL,
-    start_date  DATE            NOT NULL,
-    PRIMARY KEY (donor_id)
-);
-
-CREATE TABLE donations (
-    don_id      INT             NOT NULL,
-    don_name    VARCHAR(50)     NOT NULL,
-    donor_id    INT             NOT NULL,
-    curr_date   DATE            NOT NULL,
-    don_total   MONEY           NOT NULL,
-    PRIMARY KEY (don_id),
-    FOREIGN KEY (donor_id)  REFERENCES donor_info (donor_id)
 );
 
 INSERT INTO volunteer_info (vol_id, birth_date, first_name, last_name, hire_date)
